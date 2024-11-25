@@ -140,6 +140,7 @@ jobs:
       - name: Sonar Analyze Upload
         shell: bash
         run: >
+          cat foo
           ./mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
           -P all-java,lgpl,examples,skip-docs
           -Dsonar.scm.revision=${{ github.event.workflow_run.head_sha }}
